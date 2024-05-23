@@ -2,9 +2,12 @@
 def main():
 
     userinput = input("Fraction: ")
+
     try:
         pct = gauge(userinput)
-        print(pct)
+        
+        if not pct == None:
+            print(pct)
 
     except ValueError:
         main()
@@ -12,15 +15,18 @@ def main():
         main()
 
 def gauge(fraction):
-    fraction = fraction.split("/")
-    dec = float(fraction[0])/float(fraction[1])*100
+    Nr, Dr = fraction.split("/")
+    dec = int(int(Nr)/int(Dr)*100)
 
     if dec <= 1:
         return("E")
-    if dec >= 99:
+    
+    elif dec >= 99 and dec <=100:
         return("F")
+    
+    elif dec > 100:
+        main()
 
-    return f"{dec:.0f}" + "%"
-
+    else: return str(dec) + "%"
 
 main()
