@@ -36,20 +36,20 @@ def generate_integer(digits):
 
     # problems with 1, 2 or 3 digits generates x and y values accordingly
         if digits == 1:
-            x = random.randrange(1, 10)
-            y = random.randrange(1, 10)
+            x = random.randrange(1, 9)
+            y = random.randrange(1, 9)
             t = questions(x,y)
             s = s + t
 
         elif digits == 2:
-            x = random.randrange(10, 100)
-            y = random.randrange(10, 100)
+            x = random.randrange(10, 99)
+            y = random.randrange(10, 99)
             t = questions(x,y)
             s = s + t
 
         else:
-            x = random.randrange(100, 1000)
-            y = random.randrange(100, 1000)
+            x = random.randrange(100, 999)
+            y = random.randrange(100, 999)
             t = questions(x,y)
             s = s + t
 
